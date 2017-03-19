@@ -39,6 +39,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.google.gson.Gson;
 import com.nightonke.jellytogglebutton.JellyToggleButton;
 
 import org.json.JSONArray;
@@ -58,16 +64,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-
-import cz.msebera.android.httpclient.HttpEntity;
-import cz.msebera.android.httpclient.HttpResponse;
-import cz.msebera.android.httpclient.NameValuePair;
-import cz.msebera.android.httpclient.client.ClientProtocolException;
-import cz.msebera.android.httpclient.client.HttpClient;
-import cz.msebera.android.httpclient.client.entity.UrlEncodedFormEntity;
-import cz.msebera.android.httpclient.client.methods.HttpPost;
-import cz.msebera.android.httpclient.impl.client.HttpClientBuilder;
-
 
 public class MainActivity extends AppCompatActivity implements MainFragment.onSomeEventListener, Loading_dialog.Callbacks {
     SimpleFragmentPagerAdapter pageAdapter;
@@ -418,6 +414,8 @@ public class MainActivity extends AppCompatActivity implements MainFragment.onSo
         return String.format("0x%x",value);
     }
 
+
+
     private class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
         private List<Fragment> fragments;
         private Bundle fragmentBundle;
@@ -531,3 +529,8 @@ public class MainActivity extends AppCompatActivity implements MainFragment.onSo
 // TODO: 3/7/2017 add info on all the how the things work
 // TODO: 3/8/2017 checking at read and data to be writen to minimize writing
 // TODO: 9/3/2017 initialize a variable for check to display the snakbar the first time user touch
+
+// TODO: 12/3/2017 json2view: get id of view in fragment from activity
+// TODO: 12/3/2017 json2view: get id of view from json in a fragment and set onclick/onprogress
+// TODO: 12/3/2017 multiple fragment in a json file (split into parts to put into json2view)
+// TODO: 12/3/2017 think about tab and tab titles (wether to implement on json or not
